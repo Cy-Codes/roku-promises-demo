@@ -1,0 +1,22 @@
+import "pkg:/source/roku_modules/promises/promises.brs"
+import "pkg:/source/Network/NetworkClient.bs"
+
+class LocationApi
+    sub fetchLocation() as object
+        'Make Network Request
+        promise = NetworkClient().networkRequest("http://worldtimeapi.org/api/ip")
+        print promise.id
+        promises.chain(promise).then(sub(result)
+            if result <> invalid
+                print result
+            else
+                print "Invalid result"
+            end if
+        end sub).catch(sub(error)
+            print "caught error " + error
+        end sub).finally(sub()
+            print "finally do clean up"
+        end sub)
+        return promise
+    end sub
+end class

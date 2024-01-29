@@ -1,0 +1,30 @@
+{
+  "name": "demo-library",
+  "version": "1.0.0",
+  "description": "A Roku application written in BrighterScript",
+  "scripts": {
+    "build": "bsc --createPackage=false",
+    "watch": "npm run build -- --watch",
+    "package": "bsc --create-package"
+  },
+  "files": [
+    "src/**/*"
+  ],
+  "ropm": {
+    "rootDir": "src",
+    "packageRootDir": "dist"
+  },
+  "keywords": [
+    "ropm",
+    "roku"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "brighterscript": "^0.65.8"
+  },
+  "dependencies": {
+    "bslib": "npm:@rokucommunity/bslib@^0.1.1",
+    "promises": "npm:@rokucommunity/promises@^0.2.0",
+    "ropm": "^0.10.21"
+  }
+}

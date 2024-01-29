@@ -1,0 +1,9 @@
+import "pkg:/source/Network/LocationApi.bs"
+
+namespace DemoSdk
+
+    sub start()
+        LocationApi().fetchLocation()
+    end sub
+
+end namespace
