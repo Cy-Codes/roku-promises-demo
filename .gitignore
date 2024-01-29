@@ -2,3 +2,6 @@
 package-lock.json
 components
 roku_modules
+dist
+node_modules
+out
