@@ -1,13 +1,14 @@
 import "pkg:/source/roku_modules/promises/promises.brs"
 class NetworkTask
-
-    sub init()
+    sub new()
+        print "Init network task"
         m.port = CreateObject("roMessagePort")
         m.REQUEST_TIMEOUT = 5
         m.top.functionName = "makeRequest"
     end sub
 
     sub makeRequest()
+        print "try make request"
         try
             result = m.getNetworkResult(m.top.url, m.top.method, m.top.body)
             if (result.error <> true)
@@ -45,7 +46,7 @@ class NetworkTask
             responseCode = msg.getResponseCode()
             responseString = msg.getString()
 
-            if responseCode = 200
+            if responseCode >= 200 or responseCode < 300
                 return {
                     data: responseString
                     responseCode: responseCode
