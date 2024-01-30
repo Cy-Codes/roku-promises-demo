@@ -1,4 +1,4 @@
-import "pkg:/source/Network/LocationApi.bs"
+import "pkg:/source/Api/LocationApi.bs"
 
 namespace DemoSdk
 

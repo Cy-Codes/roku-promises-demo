@@ -1,0 +1,14 @@
+import "pkg:/source/roku_modules/promises/promises.brs"
+
+class NetworkClient
+    function networkRequest(url as string, method = "GET" as string, body = {} as object) as object
+        promise = promises.create()
+        task = createObject("roSGNode", "NetworkTask")
+        task.url = url
+        task.method = method
+        task.body = body
+        task.promise = promise
+        task.control = "RUN"
+        return promise
+    end function
+end class
