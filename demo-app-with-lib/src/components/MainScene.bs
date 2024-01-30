@@ -1,0 +1,12 @@
+import "pkg:/source/roku_modules/demolib/DemoSdk.brs"
+
+sub init()
+    m.top.setFocus(true)
+    m.mainLabel = m.top.findNode("mainLabel")
+    'change the color
+    m.mainLabel.color = "0xFFFFFF"
+    'make the text really big
+    m.mainLabel.font.size = 100
+    print "Start network request"
+    demoLib.DemoSdk.start()
+end sub

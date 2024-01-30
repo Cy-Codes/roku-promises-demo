@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="NetworkTask" extends="Task">
+    <interface>
+        <field id="url" type="string" />
+        <field id="method" type="string" />
+        <field id="header" type="assocArray" />
+        <field id="query" type="assocArray" />
+        <field id="body" type="assocArray" />
+        <field id="promise" type="node" />
+        <field id="output" type="assocArray" />
+    </interface>
+</component>

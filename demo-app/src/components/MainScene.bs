@@ -1,0 +1,11 @@
+import "pkg:/source/Api/LocationApi.bs"
+sub init()
+    m.top.setFocus(true)
+    m.mainLabel = m.top.findNode("mainLabel")
+    'change the color
+    m.mainLabel.color = "0xFFFFFF"
+    'make the text really big
+    m.mainLabel.font.size = 100
+    print "fetch location"
+    LocationApi().fetchLocation()
+end sub
